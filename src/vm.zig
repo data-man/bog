@@ -107,6 +107,7 @@ pub const Vm = struct {
     }
 
     pub fn addStdNoIo(vm: *Vm) Allocator.Error!void {
+        try vm.addPackage("std.bitops", bog.std.bitops);
         try vm.addPackage("std.math", bog.std.math);
         try vm.addPackage("std.map", bog.std.map);
         try vm.addPackage("std.debug", bog.std.debug);
